@@ -5,6 +5,7 @@ const MEDICINES = DB.medicines;
 class query {
     paginate = (limit, page, per_page) => new Promise((resolve, reject) => {
         MEDICINES.find({}, (error, results) => {
+            console.log("GET RESULTS: \n", results);
             const finalData = results.map((data) => {
                 const temp = {id: data.id, ...data._doc};
                 const { _id, __v, ...filteredData } = temp;
@@ -13,6 +14,13 @@ class query {
             resolve(finalData);
             reject(error);
         }).limit(limit).skip(page * per_page)
+    });
+
+    getAll = () => new Promise((resolve, reject) => {
+        MEDICINES.find({}, (error, results) => {
+            resolve(results);
+            reject(error);
+        })
     });
 
     findDocumentByID = (data) => new Promise((resolve, reject) => {
