@@ -25,15 +25,9 @@ DB.mongoose
         useUnifiedTopology: true
     })
     .then(() => {
-        app.get("/playground/.*", (req, res) => {
-            res.status(200).send({message: "!!! DATABASAE ESTABLISH !!!"});
-        });
         console.log("Database Connected");
     })
     .catch((error) => {
-        app.get("/playground/.*", (req, res) => {
-            res.status(500).send({message: "!!! DATABASAE ERROR !!!"});
-        });
         console.log("Can't connect to database: \n", error);
     });
 
