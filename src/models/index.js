@@ -1,0 +1,1 @@
+export * from "./medicines.model.js";
