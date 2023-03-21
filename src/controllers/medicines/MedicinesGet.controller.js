@@ -9,9 +9,11 @@ export const MedicinesGet = async (req, res) => {
     const limit = Number(req.query.limit); 
     const page = Number(req.query.page) - 1;
     const per_page = Number(req.query.per_page);
-    
+    const q = req.query.q;
+    // console.log("QUERY SEARCH: \n", Number(q));
+
     const getAll = await medicinesManager.getAll();
-    const query = await medicinesManager.paginate(limit, page, per_page);
+    const query = await medicinesManager.paginate(limit, page, per_page, q);
     // console.log(getAll.length);
     const response = {
         limit,
