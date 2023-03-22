@@ -32,7 +32,12 @@ class query {
 
     getAll = () => new Promise((resolve, reject) => {
         MEDICINES.find({}, (error, results) => {
-            resolve(results);
+            const finalData = results?.map((data) => {
+                const temp = {id: data.id, ...data._doc};
+                const { _id, __v, ...filteredData } = temp;
+                return filteredData;
+            });
+            resolve(finalData);
             reject(error);
         })
     });
