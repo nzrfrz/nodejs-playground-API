@@ -18,7 +18,7 @@ class query {
                 ]
         }, 
         (error, results) => {
-            console.log("GET RESULTS: \n", results);
+            // console.log("GET RESULTS: \n", results);
             // console.log(error);
             const finalData = results?.map((data) => {
                 const temp = {id: data.id, ...data._doc};
