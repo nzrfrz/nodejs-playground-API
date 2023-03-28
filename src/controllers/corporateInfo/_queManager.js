@@ -37,7 +37,7 @@ class query {
                 const { _id, __v, ...filteredData } = temp;
                 return filteredData;
             });
-            resolve(finalData);
+            resolve(finalData.reverse());
             reject(error);
         })
     });

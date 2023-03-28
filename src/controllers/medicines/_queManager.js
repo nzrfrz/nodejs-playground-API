@@ -18,7 +18,7 @@ class query {
                 ]
         }, 
         (error, results) => {
-            // console.log("GET RESULTS: \n", results);
+            console.log("GET RESULTS: \n", results);
             // console.log(error);
             const finalData = results?.map((data) => {
                 const temp = {id: data.id, ...data._doc};
@@ -27,12 +27,12 @@ class query {
             });
             resolve(finalData);
             reject(error);
-        }).limit(limit).skip(page * per_page)
+        }).sort({ _id: -1 }).limit(limit).skip(page * per_page)
     });
 
     getAll = () => new Promise((resolve, reject) => {
         MEDICINES.find({}, (error, results) => {
-            const finalData = results?.map((data) => {
+            const finalData = results?.reverse().map((data) => {
                 const temp = {id: data.id, ...data._doc};
                 const { _id, __v, ...filteredData } = temp;
                 return filteredData;
