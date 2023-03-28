@@ -1,7 +1,10 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
-import { Medicines } from "./src/models/index.js";
+import { 
+    Medicines, 
+    CorporateInfo 
+} from "./src/models/index.js";
 
 dotenv.config();
 
@@ -14,6 +17,7 @@ db.mongoose = mongoose;
 db.url = MONGO_DB_URL;
 
 db.medicines = Medicines(mongoose);
+db.corporate_info = CorporateInfo(mongoose);
 
 const DB = db;
 

@@ -12,6 +12,10 @@ export const message = {
     successAddingMedicine: "New Medicine added successfully",
     successEditingMedicine: "Medicine edited successfully",
     successdeletingMedicine: "Medicine deleted successfully",
+
+    successAddingCorpInfo: "New Corporate Info added successfully",
+    successEditingCorpInfo: "Corporate Info edited successfully",
+    successdeletingCorpInfo: "Corporate Info deleted successfully",
 };
 
 export const status = {

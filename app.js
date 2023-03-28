@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 
 import DB from "./db.config.js";
 
-import { Medicines } from "./src/routes/index.js";
+import { Medicines, CorporateInfo } from "./src/routes/index.js";
 
 dotenv.config();
 const app = express();
@@ -39,6 +39,7 @@ app.get("/playground", (req, res) => {
 // Products(app);
 
 Medicines(app);
+CorporateInfo(app);
 
 app.listen(process.env.PORT, () => {
     console.log(`App Running on: http://localhost:${process.env.PORT}`);
