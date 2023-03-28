@@ -1,9 +1,30 @@
 export const CorporateInfo = (mongoose) => {
     const schema = mongoose.Schema(
         {
-            personInChargeInfo: Object,
-            corporateInfo: Object,
-            contractInfo: Object
+            personalName: String,
+            position: String,
+            dateOfBirth: String,
+            gender: String,
+            personalAddress: String,
+            province: String,
+            regency: String,
+            subDistrict: String,
+            village: String,
+            personalEmail: String,
+            personalNumber: String,
+            userName: String,
+            password: String,
+            corporateName: String,
+            corporateSector: String,
+            businessScale: String,
+            officeEmail: String,
+            officeNumber: String,
+            officeAddress: String,
+            postalCode: String,
+            contractActiveStartDate: String,
+            contractActiveEndDate: String,
+            contractValue: String,
+            channelDeals: Array
         },
         {
             timestamps: true
